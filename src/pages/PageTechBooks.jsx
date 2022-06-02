@@ -7,9 +7,9 @@ export const PageTechBooks = ({ techBooks, subtitle, quote }) => {
       <p>
         <i>"{quote}"</i>
       </p>
-      <p>Here are the {generalBooks.length} general books:</p>
+      <p>Here are the {techBooks.length} general books:</p>
       <ul>
-        {generalBooks.map((book, index) => {
+        {techBooks.map((book, index) => {
           return <li key={index}>{book.title}</li>;
         })}
       </ul>
