@@ -4,6 +4,11 @@ import { PageTechBooks } from "./pages/PageTechBooks";
 import { PageGeneralBooks } from "./pages/PageGeneralBooks";
 import { PageAbout } from "./pages/PageAbout";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
+import { withLoadedBooks } from "./hocs/withLoadedBooks";
+
+const PageTechBooksWithLoadedBooks = withLoadedBooks(PageTechBooks);
+const PageGeneralBooksWithLoadedBooks = withLoadedBooks(PageGeneralBooks);
+const PageAboutWithLoadedBooks = withLoadedBooks(PageAbout);
 
 function App() {
   return (
@@ -17,9 +22,12 @@ function App() {
       <hr />
       <Routes>
         <Route path="/welcome" element={<PageWelcome />} />
-        <Route path="/tech-books" element={<PageTechBooks />} />
-        <Route path="/general-books" element={<PageGeneralBooks />} />
-        <Route path="/about" element={<PageAbout />} />
+        <Route path="/tech-books" element={<PageTechBooksWithLoadedBooks />} />
+        <Route
+          path="/general-books"
+          element={<PageGeneralBooksWithLoadedBooks />}
+        />
+        <Route path="/about" element={<PageAboutWithLoadedBooks />} />
         <Route path="/" element={<Navigate to="/welcome" replace />} />
       </Routes>
     </div>
