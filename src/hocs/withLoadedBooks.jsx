@@ -12,13 +12,11 @@ export const withLoadedBooks = (Component, subtitle) => (props) => {
     (async () => {
       setTechBooks((await axios.get(techBookUrl)).data);
     })();
-    setSubtitle(subtitle);
   }, []);
   useEffect(() => {
     (async () => {
       setGeneralBooks((await axios.get(generalBookUrl)).data);
     })();
-    setSubtitle(subtitle);
   }, []);
 
   return (
