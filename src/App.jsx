@@ -5,6 +5,7 @@ import { PageGeneralBooks } from "./pages/PageGeneralBooks";
 import { PageAbout } from "./pages/PageAbout";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 import { withLoadedBooks } from "./hocs/withLoadedBooks";
+import { withQuoteOfTheDay } from "./hocs/withQuoteOfTheDay";
 
 const PageTechBooksWithLoadedBooks = withLoadedBooks(
   PageTechBooks,
@@ -15,6 +16,11 @@ const PageGeneralBooksWithLoadedBooks = withLoadedBooks(
   "Deep reading "
 );
 const PageAboutWithLoadedBooks = withLoadedBooks(PageAbout);
+
+const PageTechBooksFinal = withQuoteOfTheDay(PageTechBooksWithLoadedBooks);
+const PageGeneralBooksFinal = withQuoteOfTheDay(
+  PageGeneralBooksWithLoadedBooks
+);
 
 function App() {
   return (
@@ -28,11 +34,8 @@ function App() {
       <hr />
       <Routes>
         <Route path="/welcome" element={<PageWelcome />} />
-        <Route path="/tech-books" element={<PageTechBooksWithLoadedBooks />} />
-        <Route
-          path="/general-books"
-          element={<PageGeneralBooksWithLoadedBooks />}
-        />
+        <Route path="/tech-books" element={<PageTechBooksFinal />} />
+        <Route path="/general-books" element={<PageGeneralBooksFinal />} />
         <Route path="/about" element={<PageAboutWithLoadedBooks />} />
         <Route path="/" element={<Navigate to="/welcome" replace />} />
       </Routes>
