@@ -4,7 +4,8 @@ export const PageAbout = ({ generalBooks, techBooks }) => {
       <h2>About</h2>
       <p>
         This site now has a total of {generalBooks.length + techBooks.length}{" "}
-        books.
+        books ({generalBooks.length} general books and {techBooks.length} tech
+        books).
       </p>
     </div>
   );

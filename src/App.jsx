@@ -6,8 +6,14 @@ import { PageAbout } from "./pages/PageAbout";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 import { withLoadedBooks } from "./hocs/withLoadedBooks";
 
-const PageTechBooksWithLoadedBooks = withLoadedBooks(PageTechBooks);
-const PageGeneralBooksWithLoadedBooks = withLoadedBooks(PageGeneralBooks);
+const PageTechBooksWithLoadedBooks = withLoadedBooks(
+  PageTechBooks,
+  "The best web dev books of our time"
+);
+const PageGeneralBooksWithLoadedBooks = withLoadedBooks(
+  PageGeneralBooks,
+  "Deep reading "
+);
 const PageAboutWithLoadedBooks = withLoadedBooks(PageAbout);
 
 function App() {
