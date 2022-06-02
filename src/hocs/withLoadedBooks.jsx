@@ -4,7 +4,7 @@ import axios from "axios";
 const techBookUrl = "https://edwardtanguay.netlify.app/share/techBooks.json";
 const generalBookUrl = "https://edwardtanguay.netlify.app/share/books.json";
 
-export const withLoadedBooks = () => {
+export const withLoadedBooks = (Component) => {
   return (props) => {
     const [techBooks, setTechBooks] = useState([]);
     const [generalBooks, setGeneralBooks] = useState([]);
